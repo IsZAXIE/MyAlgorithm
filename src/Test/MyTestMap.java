@@ -1,11 +1,9 @@
 package Test;
 
-import Sort.ArrayUtils;
-import com.sun.source.tree.ArrayAccessTree;
+import Utils.ArrayUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class MyTestMap {
     public static void main(String[] args) {

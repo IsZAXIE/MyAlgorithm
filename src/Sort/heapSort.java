@@ -1,7 +1,9 @@
 package Sort;
 
-import static Sort.ArrayUtils.initArray;
-import static Sort.ArrayUtils.swap;
+import Utils.ArrayUtils;
+
+import static Utils.ArrayUtils.initArray;
+import static Utils.ArrayUtils.swap;
 
 public class heapSort {
     static int time = 0;
