@@ -1,11 +1,13 @@
 package Sort;
 
+import Utils.ArrayUtils;
+
 public class QuickSort {
 
     static int count = 0;
 
     public static void main(String[] args) {
-        int[]a =ArrayUtils.initArray(20);
+        int[]a = ArrayUtils.initArray(20);
 
         ArrayUtils.printArray(a, "Original Array : ");
         quickSort(a, 0, a.length);

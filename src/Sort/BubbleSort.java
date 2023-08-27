@@ -1,5 +1,7 @@
 package Sort;
 
+import Utils.ArrayUtils;
+
 public class BubbleSort {
     public static void main(String[] args) {
         int times = 0;

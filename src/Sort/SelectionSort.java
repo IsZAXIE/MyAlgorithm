@@ -1,5 +1,7 @@
 package Sort;
 
+import Utils.ArrayUtils;
+
 public class SelectionSort {
     static int times = 0;
 

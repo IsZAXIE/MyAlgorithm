@@ -1,7 +1,5 @@
 package Test;
 
-import Sort.ArrayUtils;
-
 import java.util.Arrays;
 
 public class StringArray {
