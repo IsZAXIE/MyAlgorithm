@@ -34,7 +34,7 @@ public class heapSort {
                 temp = regular(temp, tail);
             }
             tail--;
-            ArrayUtils.printArray(a, "" + tail);
+//            ArrayUtils.printArray(a, "" + tail);
         }
         ArrayUtils.printArray(a, "排序后数组", time);
         ArrayUtils.pass(ArrayUtils.check(a, true));
