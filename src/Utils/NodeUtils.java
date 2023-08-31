@@ -119,4 +119,8 @@ public class NodeUtils {
     public static SingleNode initRandomSingleNode(int nodeListLength) {
         return initRandomSingleNode(nodeListLength, (int) (nodeListLength * 1.5));
     }
+
+    public static void printStack(SingleNode head, String note) {
+        printSingleNode(head, note + " Stack : ");
+    }
 }
