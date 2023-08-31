@@ -1,4 +1,4 @@
-package Utils;
+package Util;
 
 /**
  * @author ZAXIE

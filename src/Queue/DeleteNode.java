@@ -1,7 +1,7 @@
 package Queue;
 
 import Entity.SingleNode;
-import Utils.NodeUtils;
+import Util.NodeUtils;
 
 /**
  * @author ZAXIE

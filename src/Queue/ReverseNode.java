@@ -2,7 +2,7 @@ package Queue;
 
 import Entity.DoubleNode;
 import Entity.SingleNode;
-import Utils.NodeUtils;
+import Util.NodeUtils;
 
 public class ReverseNode {
     static final int NODE_LENGTH = 20;

@@ -1,6 +1,6 @@
 package AOPTest;
 
-import Utils.ColorPrintUtils;
+import Util.ColorPrintUtils;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

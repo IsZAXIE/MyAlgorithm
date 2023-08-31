@@ -1,6 +1,6 @@
 package Sort;
 
-import Utils.ArrayUtils;
+import Util.ArrayUtils;
 
 public class BubbleSort {
     public static void main(String[] args) {

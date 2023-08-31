@@ -1,9 +1,7 @@
-package Utils;
+package Util;
 
 import Entity.DoubleNode;
 import Entity.SingleNode;
-
-import java.util.Map;
 
 public class NodeUtils {
     public static SingleNode initSingleNode(int length) {

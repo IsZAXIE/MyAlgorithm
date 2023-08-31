@@ -1,6 +1,6 @@
 package Test;
 
-import Utils.ArrayUtils;
+import Util.ArrayUtils;
 
 import java.util.HashMap;
 import java.util.Map;
