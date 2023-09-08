@@ -1,6 +1,6 @@
 package Test;
 
-import Utils.ArrayUtils;
+import Util.ArrayUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +17,7 @@ public class MyTestMap {
 
         System.out.println("keySet : " + map.keySet());
         System.out.printf(String.valueOf(map.values().getClass()));
+        System.out.println();
         System.out.println("\tvalues : " + map.values());
 
         for (int i = 0; i < a.length * 1.5; i++) {

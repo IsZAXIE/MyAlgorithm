@@ -1,18 +1,8 @@
-package Utils;
+package Util;
 
 import java.util.Arrays;
 
 public class ArrayUtils {
-
-    public static final String RESET = "\u001B[0m";
-    public static final String BLACK = "\u001B[30m";
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String PURPLE = "\u001B[35m";
-    public static final String CYAN = "\u001B[36m";
-    public static final String WHITE = "\u001B[37m";
 
 
     /*
@@ -33,6 +23,13 @@ public class ArrayUtils {
         return initArray(length, (int) (length * 1.5));
     }
 
+    public static int[] initDescArray(int length){
+        int[] a=new int[length];
+        for(int i=length;i>0;i--){
+            a[length-i]=i;
+        }
+        return a;
+    }
 
     public static void initArray(int[] a, int range, int min) {
         for (int i = 0; i < a.length; i++) {
@@ -78,30 +75,53 @@ public class ArrayUtils {
         a[index2] = temp;
     }
 
-    public static boolean check(int[] a, boolean esc) {
+    public static void check(int[] a, boolean esc) {
         if (esc) {
             for (int i = 0; i < a.length - 1; i++) {
                 if (a[i] > a[i + 1]) {
-                    return false;
+                    pass(false);
+                    return;
                 }
             }
         }
         else {
             for (int j = 0; j < a.length - 1; j++) {
                 if (a[j] < a[j + 1]) {
-                    return false;
+                    pass(false);
+                    return;
                 }
             }
         }
-        return true;
+        pass(true);
     }
 
-    public static void pass(boolean pass){
+    private static void pass(boolean pass){
         if(pass){
-            System.out.println(GREEN+"Pass"+RESET);
+            ColorPrintUtils.printGreen("Pass");
         }
         else {
-            System.out.println(RED+"ERROR"+RESET);
+            ColorPrintUtils.printRed("Error");
         }
+        System.out.println();
+    }
+
+    // [l,r)
+    public static void printSplit(int[] a, int l, int r) {
+        for (int i=0;i<a.length;i++){
+            if(i==l){
+                System.out.print("「");
+            }
+            System.out.print(a[i]+"  ");
+            if (i==r-1){
+                System.out.print("」");
+            }
+
+        }
+        System.out.println();
+    }
+
+    public static void printSplit(int[] a,int l,int r,String note){
+        System.out.print(note);
+        printSplit(a,l,r);
     }
 }
