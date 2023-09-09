@@ -25,4 +25,8 @@ public class ColorPrintUtils {
     public static void printCyan(Object o){
         System.out.print(CYAN+o+RESET);
     }
+
+    public static void printPurple(Object o){
+        System.out.print(PURPLE+o+RESET);
+    }
 }

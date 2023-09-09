@@ -9,7 +9,7 @@ public class ExtendsTest extends ParentClass {
         TestChildClass childClass = new TestChildClass();
         System.out.println("children name : ");
         childClass.showName();
-        TestChildClass.showStaticName();
+        TestChildClass.showStaticName(); 
 
         TestParentClass parentClass = new TestParentClass();
         System.out.println("parent name : ");
