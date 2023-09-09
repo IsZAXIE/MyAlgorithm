@@ -80,6 +80,11 @@ public class ArrayUtils {
             for (int i = 0; i < a.length - 1; i++) {
                 if (a[i] > a[i + 1]) {
                     pass(false);
+                    if(a.length<=20){
+                        System.out.println();
+                        printArray(a);
+                        System.out.println();
+                    }
                     return;
                 }
             }

@@ -1,7 +1,7 @@
 package Sort;
 
-import AOPTest.MyAOPTest;
-import Entity.ParentsInterface;
+import AOPTest.TestRuntime.MyAOPTest;
+import Entity.AOPInterface.ParentsInterface;
 import Util.ArrayUtils;
 
 import static Util.ArrayUtils.initArray;

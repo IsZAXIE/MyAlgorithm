@@ -1,7 +1,9 @@
 package Sort;
 
-import AOPTest.MyAOPTest;
-import Entity.ParentsInterface;
+import AOPTest.CircleTest.CircleAopTest;
+import AOPTest.TestRuntime.MyAOPTest;
+import Entity.AOPInterface.CircleTestInterface;
+import Entity.AOPInterface.ParentsInterface;
 import Util.ArrayUtils;
 
 
@@ -13,12 +15,13 @@ import Util.ArrayUtils;
  * @author ZAXIE
  * @date 2023/8/30 20:16
  */
-public class MergeSort implements ParentsInterface {
+public class MergeSort implements ParentsInterface, CircleTestInterface {
     static int[] a;
-    static int ARRAY_LENGTH = 80000;
+    static int ARRAY_LENGTH = 20;
 
     public static void main(String[] args) {
-        MyAOPTest.testRunTime(MergeSort.class);
+        CircleAopTest.circleTest(new MergeSort());
+//        MyAOPTest.testRunTime(MergeSort.class);
     }
 
     public void sort() {
@@ -166,5 +169,21 @@ public class MergeSort implements ParentsInterface {
         for (i = 0; i < temp.length; i++) {
             a[l + i] = temp[i];
         }
+    }
+
+
+    @Override
+    public boolean eachTest() {
+        ArrayUtils.printArray(a,"thread before : ");
+
+        sort();
+        ArrayUtils.printArray(a,"thread a : ");
+        for (int i = 0; i < a.length-1; i++) {
+            if (a[i]>a[i+1]){
+                return false;
+            }
+        }
+//        ArrayUtils.check(a,true);
+        return true;
     }
 }

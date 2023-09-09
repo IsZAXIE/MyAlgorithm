@@ -1,4 +1,4 @@
-package Entity;
+package Entity.AOPInterface;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

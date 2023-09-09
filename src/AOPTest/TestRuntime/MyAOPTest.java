@@ -1,6 +1,6 @@
-package AOPTest;
+package AOPTest.TestRuntime;
 
-import Entity.ParentsInterface;
+import Entity.AOPInterface.ParentsInterface;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -67,7 +67,6 @@ public class MyAOPTest {
         if (methodList != null && methodList.size() != 0) {
             for (Method m : methodList) {
                 try {
-                    System.out.println(m.getName());
                     pi.run(m, obj);
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();

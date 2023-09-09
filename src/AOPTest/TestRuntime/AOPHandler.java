@@ -1,4 +1,4 @@
-package AOPTest;
+package AOPTest.TestRuntime;
 
 import Util.ColorPrintUtils;
 
@@ -20,16 +20,14 @@ public class AOPHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // Before
         Long startTime = System.currentTimeMillis();
-
-        Object o=method.invoke(object,args);
+        System.out.println();
+        Object o = method.invoke(object, args);
 
         // After
         Long endTime = System.currentTimeMillis();
-        ColorPrintUtils.printCyan("Method "+o+"() run time : "+(endTime-startTime)+" ms");
-        System.out.println();
-        if(endTime-startTime>1000){
-            System.err.println("time out : "+(endTime-startTime));
-            System.out.println();
+        ColorPrintUtils.printCyan("Method " + o + "() run time : " + (endTime - startTime) + " ms");
+        if (endTime - startTime > 1000) {
+            System.err.println("time out : " + (endTime - startTime));
         }
         System.out.println();
 
