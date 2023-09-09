@@ -25,9 +25,11 @@ public class AOPHandler implements InvocationHandler {
 
         // After
         Long endTime = System.currentTimeMillis();
-        ColorPrintUtils.printCyan("Method "+method.getName()+"() run time : "+(endTime-startTime)+" ms");
+        ColorPrintUtils.printCyan("Method "+o+"() run time : "+(endTime-startTime)+" ms");
+        System.out.println();
         if(endTime-startTime>1000){
             System.err.println("time out : "+(endTime-startTime));
+            System.out.println();
         }
         System.out.println();
 
