@@ -23,10 +23,10 @@ public class ArrayUtils {
         return initArray(length, (int) (length * 1.5));
     }
 
-    public static int[] initDescArray(int length){
-        int[] a=new int[length];
-        for(int i=length;i>0;i--){
-            a[length-i]=i;
+    public static int[] initDescArray(int length) {
+        int[] a = new int[length];
+        for (int i = length; i > 0; i--) {
+            a[length - i] = i;
         }
         return a;
     }
@@ -43,6 +43,14 @@ public class ArrayUtils {
 
     public static void initArray(int[] a) {
         initArray(a, (int) (a.length * 1.5));
+    }
+
+    public static int[] initOrderedArray(int length) {
+        int[] a = new int[length];
+        for (int i = 0; i < length; i++) {
+            a[i] = i;
+        }
+        return a;
     }
 
     public static void printArray(int[] a, String note) {
@@ -69,6 +77,23 @@ public class ArrayUtils {
         System.out.println(Arrays.toString(a));
     }
 
+    public static void printArray(int[] a, int startIndex, int endIndex) {
+        for (int i = startIndex; i < endIndex; i++) {
+            if ((i) % 5 == 0) {
+                System.out.println();
+                System.out.print("\t");
+            }
+            System.out.printf("%5d", a[i]);
+        }
+        System.out.println();
+    }
+
+    public static void printArray(int[] a, int startIndex, int endIndex, String note) {
+        System.out.println(note + "\t:");
+        System.out.print("\t");
+        printArray(a, startIndex, endIndex);
+    }
+
     public static void swap(int[] a, int index1, int index2) {
         int temp = a[index1];
         a[index1] = a[index2];
@@ -80,7 +105,7 @@ public class ArrayUtils {
             for (int i = 0; i < a.length - 1; i++) {
                 if (a[i] > a[i + 1]) {
                     pass(false);
-                    if(a.length<=20){
+                    if (a.length <= 20) {
                         System.out.println();
                         printArray(a);
                         System.out.println();
@@ -88,8 +113,7 @@ public class ArrayUtils {
                     return;
                 }
             }
-        }
-        else {
+        } else {
             for (int j = 0; j < a.length - 1; j++) {
                 if (a[j] < a[j + 1]) {
                     pass(false);
@@ -100,11 +124,10 @@ public class ArrayUtils {
         pass(true);
     }
 
-    private static void pass(boolean pass){
-        if(pass){
+    private static void pass(boolean pass) {
+        if (pass) {
             ColorPrintUtils.printGreen("Pass");
-        }
-        else {
+        } else {
             ColorPrintUtils.printRed("Error");
         }
         System.out.println();
@@ -112,12 +135,12 @@ public class ArrayUtils {
 
     // [l,r)
     public static void printSplit(int[] a, int l, int r) {
-        for (int i=0;i<a.length;i++){
-            if(i==l){
+        for (int i = 0; i < a.length; i++) {
+            if (i == l) {
                 System.out.print("「");
             }
-            System.out.print(a[i]+"  ");
-            if (i==r-1){
+            System.out.print(a[i] + "  ");
+            if (i == r - 1) {
                 System.out.print("」");
             }
 
@@ -125,8 +148,8 @@ public class ArrayUtils {
         System.out.println();
     }
 
-    public static void printSplit(int[] a,int l,int r,String note){
+    public static void printSplit(int[] a, int l, int r, String note) {
         System.out.print(note);
-        printSplit(a,l,r);
+        printSplit(a, l, r);
     }
 }

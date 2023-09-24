@@ -1,6 +1,6 @@
 package AOPTest.TestRuntime;
 
-import Entity.AOPInterface.ParentsInterface;
+import Entity.AOPInterface.RunAOPInterface;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -57,12 +57,12 @@ public class MyAOPTest {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        testRunTime((ParentsInterface) obj);
+        testRunTime((RunAOPInterface) obj);
     }
 
-    public static final void testRunTime(ParentsInterface parentsInterface) {
-        AOPHandler handler = new AOPHandler(parentsInterface);
-        ParentsInterface pi = (ParentsInterface) Proxy.newProxyInstance(parentsInterface.getClass().getClassLoader(), new Class[]{ParentsInterface.class}, handler);
+    public static final void testRunTime(RunAOPInterface runAOPInterface) {
+        AOPHandler handler = new AOPHandler(runAOPInterface);
+        RunAOPInterface pi = (RunAOPInterface) Proxy.newProxyInstance(runAOPInterface.getClass().getClassLoader(), new Class[]{RunAOPInterface.class}, handler);
         // use reflex get all public methods in this class
         if (methodList != null && methodList.size() != 0) {
             for (Method m : methodList) {

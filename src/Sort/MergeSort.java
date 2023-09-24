@@ -1,9 +1,8 @@
 package Sort;
 
-import AOPTest.CircleTest.CircleAopTest;
 import AOPTest.TestRuntime.MyAOPTest;
 import Entity.AOPInterface.CircleTestInterface;
-import Entity.AOPInterface.ParentsInterface;
+import Entity.AOPInterface.RunAOPInterface;
 import Util.ArrayUtils;
 
 
@@ -15,13 +14,13 @@ import Util.ArrayUtils;
  * @author ZAXIE
  * @date 2023/8/30 20:16
  */
-public class MergeSort implements ParentsInterface, CircleTestInterface {
+public class MergeSort implements RunAOPInterface, CircleTestInterface {
     static int[] a;
-    static int ARRAY_LENGTH = 20;
+    static int ARRAY_LENGTH = 2000000;
 
     public static void main(String[] args) {
-        CircleAopTest.circleTest(new MergeSort());
-//        MyAOPTest.testRunTime(MergeSort.class);
+//        CircleAopTest.circleTest(new MergeSort());
+        MyAOPTest.testRunTime(MergeSort.class);
     }
 
     public void sort() {
@@ -132,9 +131,13 @@ public class MergeSort implements ParentsInterface, CircleTestInterface {
             // on one side ? continue : go on
             while (l + mergeNum < length) {
                 // find right and merge
-                int r = Math.min(l + (mergeNum<<1), length);
+                int r = Math.min(l + (mergeNum << 1), length);
                 merge(l, mergeNum, r);
                 l = r;
+            }
+            // spill proof 防溢出
+            if (mergeNum > length / 2) {
+                break;
             }
 //            ArrayUtils.printArray(a, "middle : ", mergeNum);
         }
@@ -170,8 +173,7 @@ public class MergeSort implements ParentsInterface, CircleTestInterface {
             a[l + i] = temp[i];
         }
     }
-
-
+    /*
     @Override
     public boolean eachTest() {
         ArrayUtils.printArray(a,"thread before : ");
@@ -186,4 +188,5 @@ public class MergeSort implements ParentsInterface, CircleTestInterface {
 //        ArrayUtils.check(a,true);
         return true;
     }
+    */
 }

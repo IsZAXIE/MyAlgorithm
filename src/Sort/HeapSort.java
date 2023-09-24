@@ -1,13 +1,13 @@
 package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
-import Entity.AOPInterface.ParentsInterface;
+import Entity.AOPInterface.RunAOPInterface;
 import Util.ArrayUtils;
 
 import static Util.ArrayUtils.initArray;
 import static Util.ArrayUtils.swap;
 
-public class HeapSort implements ParentsInterface {
+public class HeapSort implements RunAOPInterface {
     static int time = 0;
 
     static int[] a;
