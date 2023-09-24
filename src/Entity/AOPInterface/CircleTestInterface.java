@@ -12,7 +12,7 @@ import static java.lang.Thread.sleep;
  */
 public interface CircleTestInterface {
 
-    Integer times =20;
+    Integer times = 20;
 
     // there should have a lock
     default void test() throws TestException {
@@ -20,14 +20,21 @@ public interface CircleTestInterface {
         ReentrantReadWriteLock.ReadLock readLock = lock.readLock();
         ReentrantReadWriteLock.WriteLock writeLock = lock.writeLock();
 
-        final boolean[] flag = {true};
+        Boolean flag = true;
         for (int i = 0; i < times; i++) {
-            Thread thread=new Thread(new Runnable() {
+            Thread thread = new Thread(new Runnable() {
+
+                Boolean sharedFlag;
+
+                public void setSharedFlag(Boolean flag) {
+                    sharedFlag = flag;
+                }
+
                 @Override
                 public void run() {
 
-                    flag[0] =eachTest()&&flag[0];
-                    if (!flag[0]){
+                    sharedFlag = eachTest() && sharedFlag;
+                    if (!sharedFlag) {
                         System.err.println("o.O error");
                         throw new RuntimeException("O.o test failed! o.O");
                     }
@@ -39,13 +46,13 @@ public interface CircleTestInterface {
         }
         try {
             sleep(200);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("main End");
     }
 
-    default boolean eachTest(){
+    default boolean eachTest() {
         return true;
     }
 }
