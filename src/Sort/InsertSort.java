@@ -1,14 +1,14 @@
 package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
-import Entity.AOPInterface.RunAOPInterface;
+import Entity.AOPInterface.MyRunAOPInterface;
 import Util.ArrayUtils;
 
 /**
  * @author ZAXIE
  * @date 2023/9/24 12:22
  */
-public class InsertSort implements RunAOPInterface {
+public class InsertSort implements MyRunAOPInterface {
     public static void main(String[] args) {
         MyAOPTest.testRunTime(InsertSort.class);
     }

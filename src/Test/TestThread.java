@@ -31,14 +31,11 @@ public class TestThread {
         thread.start();
 
         // List<Boolean>
-        Thread threadR = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                List<Boolean> booleanList=booleans;
-                if (booleanList.size()>0){
-                    booleanList.set(0,!booleanList.get(0));
-                    System.out.println("booleanList : " + booleanList+"\tori boolean list"+booleans);
-                }
+        Thread threadR = new Thread(() -> {
+            List<Boolean> booleanList=booleans;
+            if (booleanList.size()>0){
+                booleanList.set(0,!booleanList.get(0));
+                System.out.println("booleanList : " + booleanList+"\tori boolean list"+booleans);
             }
         });
         threadR.start();

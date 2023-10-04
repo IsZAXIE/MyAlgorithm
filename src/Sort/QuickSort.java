@@ -1,12 +1,12 @@
 package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
-import Entity.AOPInterface.RunAOPInterface;
+import Entity.AOPInterface.MyRunAOPInterface;
 import Util.ArrayUtils;
 
 import java.util.Arrays;
 
-public class QuickSort implements RunAOPInterface {
+public class QuickSort implements MyRunAOPInterface {
 
     public final int ARRAY_LENGTH = 2000;
 

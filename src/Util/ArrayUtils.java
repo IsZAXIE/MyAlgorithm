@@ -100,8 +100,8 @@ public class ArrayUtils {
         a[index2] = temp;
     }
 
-    public static void check(int[] a, boolean esc) {
-        if (esc) {
+    public static void check(int[] a, boolean asc) {
+        if (asc) {
             for (int i = 0; i < a.length - 1; i++) {
                 if (a[i] > a[i + 1]) {
                     pass(false);
@@ -116,6 +116,39 @@ public class ArrayUtils {
         } else {
             for (int j = 0; j < a.length - 1; j++) {
                 if (a[j] < a[j + 1]) {
+                    pass(false);
+                    return;
+                }
+            }
+        }
+        pass(true);
+    }
+
+    public static void checkHeap(int[] a, boolean isBigRoot) {
+        for (int i = 0; 2 * i + 1 < a.length; i++) {
+            if (isBigRoot) {
+                // has left child
+                // left child is gt parent
+                if (a[2 * i + 1] > a[i]) {
+                    pass(false);
+                    return;
+                }
+                int rcIndex = 2 * i + 2;
+                // has right child and right child gt parent
+                if (rcIndex < a.length && a[rcIndex] > a[i]) {
+                    pass(false);
+                    return;
+                }
+            } else {
+                // left child is lt parent
+                if (a[2 * i + 1] < a[i]) {
+                    pass(false);
+                    ColorPrintUtils.printRed("lc " + a[2 * i + 1] + " is lt root" + a[i]);
+                    return;
+                }
+                int rcIndex = 2 * i + 2;
+                // has right child and right child lt parent
+                if (rcIndex < a.length && a[rcIndex] < a[i]) {
                     pass(false);
                     return;
                 }
