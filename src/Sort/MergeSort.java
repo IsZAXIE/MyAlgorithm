@@ -2,7 +2,7 @@ package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
 import Entity.AOPInterface.CircleTestInterface;
-import Entity.AOPInterface.RunAOPInterface;
+import Entity.AOPInterface.MyRunAOPInterface;
 import Util.ArrayUtils;
 
 
@@ -14,7 +14,7 @@ import Util.ArrayUtils;
  * @author ZAXIE
  * @date 2023/8/30 20:16
  */
-public class MergeSort implements RunAOPInterface, CircleTestInterface {
+public class MergeSort implements MyRunAOPInterface, CircleTestInterface {
     static int[] a;
     static int ARRAY_LENGTH = 2000000;
 

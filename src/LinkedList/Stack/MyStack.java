@@ -1,4 +1,4 @@
-package Stack;
+package LinkedList.Stack;
 
 import Entity.SingleNode;
 import Util.NodeUtils;

@@ -1,12 +1,12 @@
 package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
-import Entity.AOPInterface.RunAOPInterface;
+import Entity.AOPInterface.MyRunAOPInterface;
 import Util.ArrayUtils;
 
 import java.util.Arrays;
 
-public class QuickSort implements RunAOPInterface {
+public class QuickSort implements MyRunAOPInterface {
 
     public final int ARRAY_LENGTH = 2000;
 
@@ -101,14 +101,11 @@ public class QuickSort implements RunAOPInterface {
         while (i != great) {
             if (a[i] < reg) {
                 // exchange a[i] with a[less]
-                swap(a, i, less);
-                less++;
-                i++;
+                swap(a, i++, less++);
             } else if (a[i] == reg) {
                 i++;
             } else if (a[i] > reg) {
-                swap(a, i, great - 1);
-                great--;
+                swap(a, i, --great);
             }
         }
         quickSort2(a, minIndex, less);

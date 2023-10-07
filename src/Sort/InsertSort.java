@@ -1,20 +1,20 @@
 package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
-import Entity.AOPInterface.RunAOPInterface;
+import Entity.AOPInterface.MyRunAOPInterface;
 import Util.ArrayUtils;
 
 /**
  * @author ZAXIE
  * @date 2023/9/24 12:22
  */
-public class InsertSort implements RunAOPInterface {
+public class InsertSort implements MyRunAOPInterface {
     public static void main(String[] args) {
         MyAOPTest.testRunTime(InsertSort.class);
     }
 
     public void sort() {
-        int[] a = ArrayUtils.initArray(2000);
+        int[] a = ArrayUtils.initArray(20);
         insertSort(a);
         ArrayUtils.check(a, true);
 
@@ -37,7 +37,11 @@ public class InsertSort implements RunAOPInterface {
                 // se temp : insert temp into j+1
                 if (a[j] <= temp) {
                     a[j + 1] = temp;
-                    continue;
+                    break;
+                    /*
+                     this is wrong cuz continue will cover original number
+                     continue;
+                     */
                 }
             }
         }

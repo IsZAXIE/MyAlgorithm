@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
  * @author ZAXIE
  * @date 2023/8/31 08:08
  */
-public interface RunAOPInterface {
+public interface MyRunAOPInterface {
 
     // implement this interface and Override this method, so you can use AOPTest to test you function.
     // if you want to show function names you should sout functions name

@@ -1,4 +1,4 @@
-package Test;
+package Test.base;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,31 +14,34 @@ public class TestThread {
     static ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
     static ReentrantReadWriteLock.ReadLock readLock = lock.readLock();
     static ReentrantReadWriteLock.WriteLock writeLock = lock.writeLock();
+
     public static void main(String[] args) {
 
         Boolean bo = true;
-        List<Boolean> booleans=new ArrayList<>(List.of(true));
+        List<Boolean> booleans = new ArrayList<>(List.of(true));
 
         // Boolean object
         Thread thread = new Thread(new Runnable() {
             Boolean temp;
+
             @Override
             public void run() {
                 temp = !bo;
-                System.out.println("temp : " + temp+"\tthread bo = "+bo);;
+                System.out.println("temp : " + temp + "\tthread bo = " + bo);
+                ;
             }
         });
         thread.start();
 
-        // List<Boolean>
-        Thread threadR = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                List<Boolean> booleanList=booleans;
-                if (booleanList.size()>0){
-                    booleanList.set(0,!booleanList.get(0));
-                    System.out.println("booleanList : " + booleanList+"\tori boolean list"+booleans);
-                }
+        /**
+         * List<Boolean> this thread can change original element
+         * cause list is an entity rather than base-type
+         */
+        Thread threadR = new Thread(() -> {
+            List<Boolean> booleanList = booleans;
+            if (booleanList.size() > 0) {
+                booleanList.set(0, !booleanList.get(0));
+                System.out.println("booleanList : " + booleanList + "\tori boolean list" + booleans);
             }
         });
         threadR.start();
@@ -56,7 +59,7 @@ public class TestThread {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("bo = "+bo);
+        System.out.println("bo = " + bo);
 
 
         Student student = new Student("My name is ");
@@ -80,7 +83,7 @@ class RunnableImpl implements Runnable {
 
     @Override
     public void run() {
-        threadBo = false;
+        threadBo = !threadBo;
         System.out.println("new threadBo : " + threadBo);
     }
 }

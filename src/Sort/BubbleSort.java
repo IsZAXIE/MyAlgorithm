@@ -1,10 +1,10 @@
 package Sort;
 
 import AOPTest.TestRuntime.MyAOPTest;
-import Entity.AOPInterface.RunAOPInterface;
+import Entity.AOPInterface.MyRunAOPInterface;
 import Util.ArrayUtils;
 
-public class BubbleSort implements RunAOPInterface {
+public class BubbleSort implements MyRunAOPInterface {
 
     private static final int LENGTH_OF_ARRAY = 100000;
     @Override
