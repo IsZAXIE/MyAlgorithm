@@ -1,4 +1,4 @@
-package Queue;
+package LinkedList.Queue;
 
 import Entity.SingleNode;
 import Util.NodeUtils;
@@ -11,7 +11,7 @@ public class DeleteNode {
     private static final int NODE_LIST_LENGTH = 20;
 
     public static void main(String[] args) {
-        SingleNode singleHead = NodeUtils.initRandomSingleNode(NODE_LIST_LENGTH,NODE_LIST_LENGTH);
+        SingleNode<Integer> singleHead = NodeUtils.initRandomSingleNode(NODE_LIST_LENGTH,NODE_LIST_LENGTH);
 
         if(singleHead==null){
             System.err.println("SingleHead == null");
@@ -26,10 +26,10 @@ public class DeleteNode {
     }
 
     private static SingleNode deleteSingleNodeElems(SingleNode head, int value) {
-        SingleNode temp=head;
+        SingleNode<Integer> temp=head;
         SingleNode pre=head;
         while (temp!=null){
-            if(temp.value==value){
+            if(value == temp.value){
                 if(head==temp){
                     // change head node
                     head=head.next;

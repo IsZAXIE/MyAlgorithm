@@ -31,10 +31,15 @@ public class ArrayUtils {
         return a;
     }
 
-    public static void initArray(int[] a, int range, int min) {
+    private static void initArray(int[] a, int range, int min) {
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random() * range) + min;
         }
+    }
+    public static int[] initArray(int length, int range, int min) {
+        int[]a =new int[length];
+        initArray(a,range,min);
+        return a;
     }
 
     public static void initArray(int[] a, int range) {

@@ -1,4 +1,4 @@
-package Test;
+package Test.base;
 
 import Util.ColorPrintUtils;
 

@@ -1,4 +1,4 @@
-package Queue;
+package LinkedList.Queue;
 
 import Entity.DoubleNode;
 import Entity.SingleNode;

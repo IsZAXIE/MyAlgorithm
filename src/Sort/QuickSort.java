@@ -101,14 +101,11 @@ public class QuickSort implements MyRunAOPInterface {
         while (i != great) {
             if (a[i] < reg) {
                 // exchange a[i] with a[less]
-                swap(a, i, less);
-                less++;
-                i++;
+                swap(a, i++, less++);
             } else if (a[i] == reg) {
                 i++;
             } else if (a[i] > reg) {
-                swap(a, i, great - 1);
-                great--;
+                swap(a, i, --great);
             }
         }
         quickSort2(a, minIndex, less);
