@@ -19,6 +19,19 @@ public class SingleNode<T> {
         this.next = next;
     }
 
+    public SingleNode(T[] values) {
+        if (values == null || values.length == 0) {
+            value = null;
+            return;
+        }
+        value = values[0];
+        SingleNode<T> temp = this;
+        for (int i = 1; i < values.length; i++) {
+            temp.next = new SingleNode<>(values[i]);
+            temp = temp.next;
+        }
+    }
+
     public void append(T value) {
         SingleNode sn = this;
         while (sn.next != null) {

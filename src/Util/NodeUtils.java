@@ -19,12 +19,57 @@ public class NodeUtils {
     }
 
     public static void printSingleNode(SingleNode head) {
+        if (head == null) {
+            System.out.println("null");
+            return;
+        }
         SingleNode temp = head;
         while (temp != null) {
             System.out.print(temp.value + " ");
             temp = temp.next;
         }
         System.out.println();
+    }
+
+    public static void printSingleNode(SingleNode head, SingleNode tail) {
+        if (head == null || tail == null) {
+            printSingleNode(head);
+            return;
+        }
+        SingleNode temp = head;
+        while (temp != null && temp != tail.next) {
+            System.out.print(temp.value + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+
+    public static int getLength(SingleNode head) {
+        if (head == null) {
+            return 0;
+        } else {
+            int length = 0;
+            SingleNode temp = head;
+            while (temp != null) {
+                length++;
+                temp = temp.next;
+            }
+            return length;
+        }
+    }
+
+    public static int getLength(SingleNode head, SingleNode tail) {
+        if (head == null || tail == null) {
+            return getLength(head);
+        }
+        SingleNode temp = head;
+        int length = 0;
+        while (temp != null && temp != tail.next) {
+            length++;
+            temp = temp.next;
+        }
+        return length;
     }
 
     public static final void printSingleNode(SingleNode head, String note) {

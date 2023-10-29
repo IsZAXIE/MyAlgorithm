@@ -1,5 +1,6 @@
 package Test.base;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -114,18 +115,36 @@ class RunnableObjImpl implements Runnable {
     }
 }
 
-class Student {
+class Student implements Serializable {
+    private int id;
     private String name;
 
     public Student() {
+    }
+
+    public Student(int id) {
+        this.id = id;
     }
 
     public Student(String name) {
         this.name = name;
     }
 
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -135,7 +154,8 @@ class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
