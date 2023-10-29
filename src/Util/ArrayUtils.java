@@ -1,6 +1,7 @@
 package Util;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class ArrayUtils {
 
@@ -36,9 +37,19 @@ public class ArrayUtils {
             a[i] = (int) (Math.random() * range) + min;
         }
     }
+
     public static int[] initArray(int length, int range, int min) {
-        int[]a =new int[length];
-        initArray(a,range,min);
+        int[] a = new int[length];
+        initArray(a, range, min);
+        return a;
+    }
+
+    // range is: [min. min + range)
+    public static Integer[] initIntegerArray(int length, int range, int min) {
+        Integer[] a = new Integer[length];
+        for (int i = 0; i < length; i++) {
+            a[i] = (int) (Math.random() * range + min);
+        }
         return a;
     }
 

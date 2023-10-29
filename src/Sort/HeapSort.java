@@ -9,7 +9,9 @@ import java.util.Arrays;
 
 import static Util.ArrayUtils.*;
 
-// we needn't any additional area in heap sort the complex of area in heap sort is O(0)
+/**
+ * we needn't any additional space in heap sort, the space complexity  in heap sort is O(0)
+ */
 public class HeapSort implements MyRunAOPInterface {
     static int time = 0;
 
