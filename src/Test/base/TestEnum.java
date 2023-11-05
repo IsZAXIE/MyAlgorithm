@@ -58,11 +58,11 @@ public enum TestEnum {
 
 //        return list.get(0).getValue();
 
-        try {
+//        try {
             return list.get(0).getValue();
-        } catch (Exception e) {
+        /*} catch (Exception e) {
             throw e;
-        }
+        }*/
     }
 
 }

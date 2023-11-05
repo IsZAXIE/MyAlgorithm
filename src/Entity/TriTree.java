@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collector;
 
 /**
+ * prefix tree
  * @author ZAXIE
  * @date 2023/10/4 14:24
  */
