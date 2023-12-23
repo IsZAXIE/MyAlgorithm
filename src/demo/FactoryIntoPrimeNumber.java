@@ -8,7 +8,7 @@ import Entity.AOPInterface.MyRunAOPInterface;
  * @date 2023/9/26 08:08
  */
 public class FactoryIntoPrimeNumber implements MyRunAOPInterface {
-    final int number = 100;
+    final int number = 319;
 
     public static void main(String[] args) {
         MyAOPTest.testRunTime(FactoryIntoPrimeNumber.class);

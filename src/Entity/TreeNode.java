@@ -7,9 +7,9 @@ package Entity;
  * @date 2023/11/5 18:44
  */
 public class TreeNode<T> {
-    T value;
-    TreeNode<T> left;
-    TreeNode<T> right;
+    public T value;
+    public TreeNode<T> left;
+    public TreeNode<T> right;
 
     public TreeNode() {}
 

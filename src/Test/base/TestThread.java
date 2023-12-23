@@ -69,6 +69,16 @@ public class TestThread {
             Thread threadStu = new Thread(new RunnableObjImpl(student, i));
             threadStu.start();
         }
+
+        try {
+            sleep(2_000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("\n\n");
+        for (int i = 0; i < 10; i++) {
+            new ExtendThread("Hi"+i).run();
+        }
     }
 }
 
@@ -157,5 +167,19 @@ class Student implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
+    }
+}
+
+class ExtendThread extends Thread {
+    public ExtendThread() {
+    }
+
+    public ExtendThread(String name) {
+        super(name);
+    }
+
+    @Override
+    public void run() {
+        System.out.println(getName());
     }
 }

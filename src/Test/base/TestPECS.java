@@ -6,6 +6,10 @@ import java.util.List;
 /**
  * @author ZAXIE
  * @date 2023/9/4 08:57
+ * <p>
+ *     PECS is used to describe T class
+ * </p>
+ *
  */
 public class TestPECS {
     static class Parent1 {
@@ -60,15 +64,17 @@ public class TestPECS {
 
     public static void main(String[] args) {
 
-        // only put T and T's children
+        // only put T and T's children,  in this case, T is consumer
         List<? super T> superT = new ArrayList<>();
         /**
          * error cause by ParentX not children of T
-         *
-         * superT.add(new Parent1());
-         * superT.add(new Parent2());
-         * superT.add(new Parent3());
          */
+
+        /*
+        superT.add(new Parent1());
+        superT.add(new Parent2());
+        superT.add(new Parent3());
+        */
         superT.add(new T());
         superT.add(new Child1());
         superT.add(new Child2());
@@ -86,15 +92,18 @@ public class TestPECS {
         List<? extends T> extendsT = new ArrayList<>();
         /**
          * Error due to inability to know concrete classes of subclasses of T
-         *
-         * extendsT.add(new Parent1());
-         * extendsT.add(new Parent2());
-         * extendsT.add(new Parent3());
-         * extendsT.add(new T());
-         * extendsT.add(new Child1());
-         * extendsT.add(new Child2());
-         * extendsT.add(new Child3());
          */
+
+        /*
+        extendsT.add(new Parent1());
+        extendsT.add(new Parent2());
+        extendsT.add(new Parent3());
+        extendsT.add(new T());
+        extendsT.add(new Child1());
+        extendsT.add(new Child2());
+        extendsT.add(new Child3());
+        */
+
 
         System.out.println(extendsT.get(0));
         System.out.println(extendsT.get(1));

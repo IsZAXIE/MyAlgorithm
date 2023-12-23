@@ -14,6 +14,7 @@ public class MyTestMap {
         for (int i = 0; i < a.length; i++) {
             map.put(a[i], i);
         }
+        map.put(a.length, null);
 
         System.out.println("keySet : " + map.keySet());
         System.out.printf(String.valueOf(map.values().getClass()));

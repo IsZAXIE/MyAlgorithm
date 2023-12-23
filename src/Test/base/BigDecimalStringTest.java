@@ -12,8 +12,8 @@ public class BigDecimalStringTest {
 
     public static void main(String[] args) {
 
-        BigDecimal bigDecimal = new BigDecimal(100.011);
-        DecimalFormat format = new DecimalFormat("#####.00");
+        BigDecimal bigDecimal = new BigDecimal(100.250000000);
+        DecimalFormat format = new DecimalFormat(".00");
 
         System.out.println(bigDecimal);
         System.out.println(format.format(bigDecimal));
